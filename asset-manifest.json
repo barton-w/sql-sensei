@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sql-sensei/static/css/main.e146e021.chunk.css",
+    "main.js": "/sql-sensei/static/js/main.2aba6d69.chunk.js",
+    "main.js.map": "/sql-sensei/static/js/main.2aba6d69.chunk.js.map",
+    "runtime~main.js": "/sql-sensei/static/js/runtime~main.a0ad6a02.js",
+    "runtime~main.js.map": "/sql-sensei/static/js/runtime~main.a0ad6a02.js.map",
+    "static/js/2.21016802.chunk.js": "/sql-sensei/static/js/2.21016802.chunk.js",
+    "static/js/2.21016802.chunk.js.map": "/sql-sensei/static/js/2.21016802.chunk.js.map",
+    "index.html": "/sql-sensei/index.html",
+    "precache-manifest.610233c9207317c35666fa318cf79cc3.js": "/sql-sensei/precache-manifest.610233c9207317c35666fa318cf79cc3.js",
+    "service-worker.js": "/sql-sensei/service-worker.js",
+    "static/css/main.e146e021.chunk.css.map": "/sql-sensei/static/css/main.e146e021.chunk.css.map"
+  }
+}
