@@ -1,4 +1,5 @@
 import clientSideValidation from "./clientSideValidation.js"
+import {base_url} from "./constants.js"
 
 let globalDecision = ""
 
@@ -16,7 +17,7 @@ export default async function evaluate(training, query) {
 const checkData = (training, query) => {
   const queryCheck = clientSideValidation(query)
   if (queryCheck.syntax) {
-    fetch("http://localhost:3000/query", {
+    fetch(base_url + "/query", {
       body: JSON.stringify({query_statement: queryCheck.query}),
       method: "POST",
       headers: {
