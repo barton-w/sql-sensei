@@ -25,6 +25,11 @@ export default function trainingContent(training) {
     content.situationBody = ["friends", "friends_music", "bands"]
     content.ninjaMoves = "Find the bands that none of your friends like!"
         break;
+    case "aggregateTraining1":
+    content.situationHeader = "1 Table:"
+    content.situationBody = ["bands"]
+    content.ninjaMoves = "Find the average number of records sold. The correct ninja move must return only 1 row."
+        break;
     default:
       return null
   }

@@ -3,8 +3,8 @@ import {base_url} from "./constants.js"
 
 let globalDecision = ""
 
-export default async function evaluate(training, query) {
-  checkData(training, query)
+export default async function evaluate(training, query, session) {
+  checkData(training, query, session)
   let promise = new Promise((res, rej) => {
     setTimeout(() => res(globalDecision), 100)
   })
@@ -14,7 +14,7 @@ export default async function evaluate(training, query) {
   return response
 }
 
-const checkData = (training, query) => {
+const checkData = (training, query, session) => {
   const queryCheck = clientSideValidation(query)
   if (queryCheck.syntax) {
     fetch(base_url + "/query", {
@@ -22,7 +22,8 @@ const checkData = (training, query) => {
       method: "POST",
       headers: {
         "Accept":"application/json",
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        "Authorization":`Bearer ${session}`
       }
     })
     .then(response => response.json())
@@ -89,6 +90,18 @@ const checkAnswer = (training, data) => {
         } else {
           return false
         }
+      } else {
+        return false
+      }
+    case "aggregateTraining1":
+      if (data.results.length === 1) {
+        const vals = Object.values(data.results[0])
+        for (let i = 0; i < vals.length; i++) {
+          if (/^288229/.test(vals[i])) {
+            return true
+          }
+        }
+        return false
       } else {
         return false
       }
