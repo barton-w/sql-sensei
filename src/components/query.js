@@ -9,7 +9,9 @@ class Query extends Component {
     query: "",
     results: [],
     error: "",
-    sensei: ""
+    sensei: "",
+    senseiMessage: "",
+    approvedQuery: ""
   }
   handleChange = (event) => {
     this.setState({
@@ -43,22 +45,34 @@ class Query extends Component {
     if (response.syntax) {
       this.setState({
         results: response.results,
-        error: ""
+        error: "",
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: ""
       })
     } else if (response.syntax === false) {
       this.setState({
         results: [],
-        error: this.handleErrors(response.error)
+        error: this.handleErrors(response.error),
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: ""
       })
     } else if (response.message) {
       this.setState({
         results: [],
-        error: "The SQL Sensei says: " + response.message
+        error: "The SQL Sensei says: " + response.message,
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: ""
       })
     } else {
       this.setState({
         results: [],
-        error: "The SQL Sensei doesn't like your query. Try again."
+        error: "The SQL Sensei doesn't like your query. Try again.",
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: ""
       })
     }
   }
@@ -94,11 +108,28 @@ class Query extends Component {
     return tabledata
   }
 checkWithTheSensei = (training, query, session) => {
-  evaluate(training, query, session).then(response => console.log("Decision in React:", response))
+  // evaluate(training, query, session).then(response => console.log("Decision in React:", response))
+  evaluate(training, query, session).then((response) => {
+    if (response) {
+      this.setState({
+        sensei: "correct",
+        senseiMessage: "The Sensei Says: CORRECT!",
+        approvedQuery: this.state.query
+      })
+    } else {
+      this.setState({
+        sensei: "incorrect",
+        senseiMessage: "The Sensei Says: INCORRECT! Try again.",
+        approvedQuery: ""
+      })
+    }
+  })
 }
   render() {
     return (
       <div className="query">
+        <div id="sensei-image-main"></div>
+        <div id="student-image-main"></div>
         <form id="query-form">
           <textarea
             id="query"
@@ -108,24 +139,30 @@ checkWithTheSensei = (training, query, session) => {
             onChange={this.handleChange}
           />
         </form>
-        <button onClick={() => {
-          this.handleSubmit()
-        }}>
-          Test It
-        </button>
-        <button
-          className="button-primary"
-          onClick={() => {
-          this.checkWithTheSensei(this.props.training, this.state.query, this.props.session)
-        }}
-          >Prove Yourself to The SQL Sensei!</button>
-          <div className="sensei">
-            {
-              this.state.sensei !== "" ?
-              <h4>{this.state.sensei}</h4>
-              : null
-            }
+        <div className="senseiMessage">
+          {
+            this.state.sensei !== "" ?
+            <h4 className={this.state.sensei}>{this.state.senseiMessage}</h4>
+            : null
+          }
+        </div>
+        {
+          this.state.sensei !== "correct" ?
+          <div>
+            <button onClick={() => {
+              this.handleSubmit()
+            }}>
+              Test It
+            </button>
+            <button
+              className="button-primary"
+              onClick={() => {
+              this.checkWithTheSensei(this.props.training, this.state.query, this.props.session)
+            }}
+              >Prove Yourself to The SQL Sensei!</button>
           </div>
+          : <button className="button-primary">Save Correct Answer to your Ninja Moves!</button>
+        }
         <div className="error">
           {
             this.state.error !== "" ?
@@ -136,7 +173,7 @@ checkWithTheSensei = (training, query, session) => {
         <div className="results">
           {
             this.state.results.length > 0 ?
-              <table>
+              <table id="query-results">
                 <thead>
                   <tr>
                     {this.renderTableHeaders()}

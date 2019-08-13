@@ -93,6 +93,18 @@ const checkAnswer = (training, data) => {
       } else {
         return false
       }
+    case "aggregateTraining1":
+      if (data.results.length === 1) {
+        const vals = Object.values(data.results[0])
+        for (let i = 0; i < vals.length; i++) {
+          if (/^288229/.test(vals[i])) {
+            return true
+          }
+        }
+        return false
+      } else {
+        return false
+      }
     default:
       return false
   }

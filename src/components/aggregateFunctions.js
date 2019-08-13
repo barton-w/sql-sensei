@@ -14,39 +14,46 @@ class AggregateFunctions extends Component {
   render() {
     return(
       <div className="training">
-        <h3>Choose Your Ninja Move</h3>
-        <select onChange={this.handleSelect}>
-          <option
-            value="joinTraining1"
-            default
-            >Ninja Move 1</option>
-          <option
-            value="joinTraining2"
-            >Ninja Move 2</option>
-          <option
-            value="joinTraining3"
-            >Ninja Move 3</option>
-          <option
-            value="joinTraining4"
-            >Ninja Move 4</option>
-        </select>
-        {/* <div className="situation">
-          <h4>Situation</h4>
-          <h5>{trainingContent(this.state.training).situationHeader}</h5>
-          <>
-            {
-              trainingContent(this.state.training).situationBody.map((item, index) => {
-                return(
-                  <p key={index}>{item}</p>
-                )
-              })
-            }
-          </>
+        <div className="choose-move">
+          <h4>Choose Your Ninja Move</h4>
+          <select id="moves-select" onChange={this.handleSelect}>
+            <option
+              value="aggregateTraining1"
+              default
+              >Ninja Move 1</option>
+            <option
+              value="aggregateTraining2"
+              >Ninja Move 2</option>
+            <option
+              value="aggregateTraining3"
+              >Ninja Move 3</option>
+            <option
+              value="aggregateTraining4"
+              >Ninja Move 4</option>
+          </select>
         </div>
-        <div className="ninja-moves">
-          <h4>Your Ninja Moves</h4>
-          <p>{trainingContent(this.state.training).ninjaMoves}</p>
-        </div> */}
+        <div className="training-summary">
+          <div className="situation">
+            <h5 id="header">Situation</h5>
+            <h6 id="situation-content">
+              {trainingContent(this.state.training).situationHeader}</h6>
+            <>
+              {
+                trainingContent(this.state.training).situationBody.map((item, index) => {
+                  return(
+                    <p id="situation-content" key={index}>{item}</p>
+                  )
+                })
+              }
+            </>
+          </div>
+          <div className="ninja-moves">
+            <h5 id="header">Your Ninja Moves</h5>
+            <p id="situation-content">
+              {trainingContent(this.state.training).ninjaMoves}</p>
+            <a id="postgres" target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org/docs/9.2/sql-syntax.html">PostgreSQL syntax only</a>
+          </div>
+        </div>
         <Query
           training={this.state.training}
           userId={this.props.userId}

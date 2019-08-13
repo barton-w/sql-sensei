@@ -51,7 +51,7 @@ class Joins extends Component {
             <h5 id="header">Your Ninja Moves</h5>
             <p id="situation-content">
               {trainingContent(this.state.training).ninjaMoves}</p>
-            <a id="postgres" target="_blank" href="https://www.postgresql.org/docs/9.2/sql-syntax.html">PostgreSQL syntax only</a>
+            <a id="postgres" target="_blank" rel="noopener noreferrer" href="https://www.postgresql.org/docs/9.2/sql-syntax.html">PostgreSQL syntax only</a>
           </div>
         </div>
         <Query

@@ -67,6 +67,30 @@ body {
   background-size: cover;
 }
 
+#sensei-image-main {
+  background-image: url("./css/images/sensei.png");
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 0 auto;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 50%;
+  right: 8%;
+}
+
+#student-image-main {
+  background-image: url("./css/images/student.png");
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 0 auto;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 50%;
+  left: 8%;
+}
+
 .training {
   width: 100;
 }
@@ -108,7 +132,7 @@ body {
 
 #query {
   width: 80%;
-  height: 15vh;
+  height: 20vh;
   background-color: black;
   color: var(--white);
   font-family: monospace;
@@ -172,4 +196,23 @@ nav {
   margin-left: 3%;
   width: 12rem;
   background-color: var(--dark);
+}
+
+.results {
+  margin: 3% auto;
+  width: 100%;
+}
+
+#query-results {
+  font-size: 1.25rem;
+  margin: 0 auto;
+}
+
+.incorrect {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.correct {
+  font-weight: 600;
 }
