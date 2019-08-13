@@ -16,8 +16,8 @@ class Query extends Component {
       [event.target.id]: event.target.value
     })
   }
-  handleSubmit = (event) => {
-    event.preventDefault()
+  handleSubmit = () => {
+    //event.preventDefault()
     const queryCheck = clientSideValidation(this.state.query)
     if (queryCheck.syntax) {
       fetch(base_url + "/query", {
@@ -93,15 +93,13 @@ class Query extends Component {
     }
     return tabledata
   }
-checkWithTheSensei = (training, query) => {
-  evaluate(training, query).then(response => console.log("Decision in React:", response))
-  // const decision = evaluate(training, query)
-  // console.log("Decision: ", decision)
+checkWithTheSensei = (training, query, session) => {
+  evaluate(training, query, session).then(response => console.log("Decision in React:", response))
 }
   render() {
     return (
       <div className="query">
-        <form onSubmit={this.handleSubmit}>
+        <form id="query-form">
           <textarea
             id="query"
             type="textarea"
@@ -109,10 +107,16 @@ checkWithTheSensei = (training, query) => {
             value={this.state.query}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Test It"/>
         </form>
         <button onClick={() => {
-          this.checkWithTheSensei(this.props.training, this.state.query)
+          this.handleSubmit()
+        }}>
+          Test It
+        </button>
+        <button
+          className="button-primary"
+          onClick={() => {
+          this.checkWithTheSensei(this.props.training, this.state.query, this.props.session)
         }}
           >Prove Yourself to The SQL Sensei!</button>
           <div className="sensei">
@@ -125,7 +129,7 @@ checkWithTheSensei = (training, query) => {
         <div className="error">
           {
             this.state.error !== "" ?
-            <h4>{this.state.error}</h4>
+            <h5>{this.state.error}</h5>
             : null
           }
         </div>

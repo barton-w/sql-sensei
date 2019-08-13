@@ -1,4 +1,175 @@
-textarea {
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap');
+
+:root {
+  --white: #FFFFFF;
+  --red: #be0029;
+  --dark: rgb(41,44,51);
+}
+
+/* * {
+  border: 1px solid dodgerblue;
+} */
+
+body, html {
+  /* height: 100%; */
+  margin: 0;
+  background-color: var(--dark)
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  color: var(--white);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#title {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 7rem;
+}
+
+.app {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.form-field {
+  color: var(--dark);
+}
+
+#account-header {
+  margin-bottom: 5%;
+}
+
+.create-account {
+  text-align: center;
+  display: block;
+}
+
+.account-form {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  width: 33%;
+}
+
+#sensei-image {
+  background-image: url("./css/images/sensei.png");
+  width: 120px;
+  height: 120px;
+  margin: 2% auto 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.training {
+  width: 100;
+}
+
+.training-summary {
+  display: flex;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.situation {
+  margin-left: 20%;
+  text-align: left;
   width: 200px;
-  height: 200px;
+}
+
+#situation-content {
+  margin-bottom: 0;
+}
+
+#postgres {
+  margin-bottom: 0;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.ninja-moves {
+  margin-right: 10%;
+  margin-left: 5%;
+  text-align: left;
+  width: 400px;
+}
+
+#header {
+  color: var(--red);
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+#query {
+  width: 80%;
+  height: 15vh;
+  background-color: black;
+  color: var(--white);
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+#query-form {
+  margin-bottom: 0;
+}
+
+nav {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  text-align: left;
+}
+
+#account-toggle {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#error {
+  color: var(--red);
+  font-size: 1.75rem;
+}
+
+.button-primary {
+  margin-bottom: 0;
+}
+
+#ninja-skill-button {
+  margin-bottom: 3rem;
+}
+
+#link {
+  color: var(--white);
+  display: block;
+  text-decoration: none;
+  margin-bottom: 2%;
+}
+
+#link-cta {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.button-secondary {
+  color: var(--red);
+  border-color: var(--red);
+  outline: 0;
+}
+
+.choose-move {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#moves-select {
+  margin-left: 3%;
+  width: 12rem;
+  background-color: var(--dark);
 }
