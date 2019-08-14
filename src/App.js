@@ -53,10 +53,11 @@ class App extends Component {
           :
           <Router>
             <nav>
+              <Link id="link-cta1" to="/">Train with The Sensei!</Link>
+              <Link id="link-cta2" to="/ninjamoves">View Saved Ninja Moves</Link>
               <a id="link"
                 onClick={this.logOut}
                 href="/">{this.state.username} | Log Out</a>
-              <Link id="link-cta" to="/ninjamoves">Your Saved Ninja Moves</Link>
             </nav>
             <Route path="/" exact
               render={(props) => <TrainingSelector {...props} userId={this.state.userId} username={this.state.username} session={this.state.session}

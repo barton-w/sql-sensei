@@ -11,7 +11,23 @@ class Query extends Component {
     error: "",
     sensei: "",
     senseiMessage: "",
-    approvedQuery: ""
+    approvedQuery: "",
+    saved: "",
+    training: this.props.training
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.training !== this.state.training) {
+      this.setState({
+        query: "",
+        results: [],
+        error: "",
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: "",
+        saved: "",
+        training: nextProps.training
+      })
+    }
   }
   handleChange = (event) => {
     this.setState({
@@ -125,6 +141,34 @@ checkWithTheSensei = (training, query, session) => {
     }
   })
 }
+saveNinjaMoves = () => {
+  fetch(base_url + "/solutions", {
+    body: JSON.stringify({
+      solution: this.state.approvedQuery,
+      training: this.props.training,
+      user_id: this.props.userId
+    }),
+    method: "POST",
+    headers: {
+      "Accept":"application/json",
+      "Content-Type":"application/json",
+      "Authorization":`Bearer ${this.props.session}`
+    }
+  })
+  .then(response => response.json())
+  .then((data) => {
+    this.setState({
+      query: this.state.approvedQuery,
+      results: [],
+      error: "",
+      sensei: "",
+      senseiMessage: "",
+      approvedQuery: "",
+      saved: "Saved to your Ninja Moves!"
+    })
+  })
+  .catch(error => console.log(error))
+}
   render() {
     return (
       <div className="query">
@@ -146,8 +190,15 @@ checkWithTheSensei = (training, query, session) => {
             : null
           }
         </div>
+        <div className="saved">
+          {
+            this.state.saved !== "" ?
+            <h4>{this.state.saved}</h4>
+            : null
+          }
+        </div>
         {
-          this.state.sensei !== "correct" ?
+          this.state.sensei !== "correct" && this.state.saved === "" ?
           <div>
             <button onClick={() => {
               this.handleSubmit()
@@ -161,7 +212,17 @@ checkWithTheSensei = (training, query, session) => {
             }}
               >Prove Yourself to The SQL Sensei!</button>
           </div>
-          : <button className="button-primary">Save Correct Answer to your Ninja Moves!</button>
+          :
+          <div>
+            {
+              this.state.saved !== "" ?
+              null
+              :
+              <button
+                onClick={this.saveNinjaMoves}
+                className="button-primary">Save the query to your Ninja Moves!</button>
+            }
+          </div>
         }
         <div className="error">
           {
