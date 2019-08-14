@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/sql-sensei/precache-manifest.dd379382096f2d26c6832fb347c6c556.js"
+  "/sql-sensei/precache-manifest.9042fcd206a1a9ad34a5b53d370fda89.js"
 );
 
 self.addEventListener('message', (event) => {
