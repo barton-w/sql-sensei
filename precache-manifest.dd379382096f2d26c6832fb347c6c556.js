@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0c7118a77c16cf41e487dc839a7d38f4",
+    "revision": "beb0e883f0e5188ff83b431f15f96619",
     "url": "/sql-sensei/index.html"
   },
   {
-    "revision": "fbe2f48e6c9c0ead246b",
+    "revision": "e03621894405bfa51c73",
     "url": "/sql-sensei/static/css/main.7685160f.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sql-sensei/static/js/2.40ca6543.chunk.js"
   },
   {
-    "revision": "fbe2f48e6c9c0ead246b",
-    "url": "/sql-sensei/static/js/main.9b74a465.chunk.js"
+    "revision": "e03621894405bfa51c73",
+    "url": "/sql-sensei/static/js/main.51e2c2e3.chunk.js"
   },
   {
     "revision": "5f97d4451d7bb518e23a",
