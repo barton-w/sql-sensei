@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sql-sensei/static/css/main.74c1c84b.chunk.css",
-    "main.js": "/sql-sensei/static/js/main.fa8281a6.chunk.js",
-    "main.js.map": "/sql-sensei/static/js/main.fa8281a6.chunk.js.map",
+    "main.css": "/sql-sensei/static/css/main.7685160f.chunk.css",
+    "main.js": "/sql-sensei/static/js/main.9b74a465.chunk.js",
+    "main.js.map": "/sql-sensei/static/js/main.9b74a465.chunk.js.map",
     "runtime~main.js": "/sql-sensei/static/js/runtime~main.a0ad6a02.js",
     "runtime~main.js.map": "/sql-sensei/static/js/runtime~main.a0ad6a02.js.map",
     "static/js/2.40ca6543.chunk.js": "/sql-sensei/static/js/2.40ca6543.chunk.js",
     "static/js/2.40ca6543.chunk.js.map": "/sql-sensei/static/js/2.40ca6543.chunk.js.map",
     "index.html": "/sql-sensei/index.html",
-    "precache-manifest.d5f6549188f8c1249a492e00c46716da.js": "/sql-sensei/precache-manifest.d5f6549188f8c1249a492e00c46716da.js",
+    "precache-manifest.d6f8750150438648ab8af6870bb158d5.js": "/sql-sensei/precache-manifest.d6f8750150438648ab8af6870bb158d5.js",
     "service-worker.js": "/sql-sensei/service-worker.js",
-    "static/css/main.74c1c84b.chunk.css.map": "/sql-sensei/static/css/main.74c1c84b.chunk.css.map",
-    "static/media/App.css": "/sql-sensei/static/media/sensei.11c4fc9b.png"
+    "static/css/main.7685160f.chunk.css.map": "/sql-sensei/static/css/main.7685160f.chunk.css.map",
+    "static/media/App.css": "/sql-sensei/static/media/student2.e91f0520.png"
   }
 }
