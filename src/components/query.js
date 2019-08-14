@@ -74,6 +74,19 @@ class Query extends Component {
         senseiMessage: "",
         approvedQuery: ""
       })
+    } else if (response.message === "user violation") {
+      console.log("bleep bloop")
+      this.setState({
+        query: "",
+        results: [],
+        error: "",
+        sensei: "",
+        senseiMessage: "",
+        approvedQuery: "",
+        saved: "",
+        training: this.props.training
+      })
+      this.props.logOut()
     } else if (response.message) {
       this.setState({
         results: [],
@@ -97,7 +110,7 @@ class Query extends Component {
       let error = str.toLowerCase()
       error = error.replace(/\n/g, " ").replace(/\\/g, "").replace(/"/g, "'")
       const errorMessage = error.split("error: ")[1].split(" line")
-      return "The SQL Sensei spots a syntax error: " + errorMessage[0]
+      return "The SQL Sensei spots a syntax error. " + errorMessage[0]
     } else {
       return str
     }

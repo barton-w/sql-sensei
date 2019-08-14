@@ -6,7 +6,7 @@ let globalDecision = ""
 export default async function evaluate(training, query, session) {
   checkData(training, query, session)
   let promise = new Promise((res, rej) => {
-    setTimeout(() => res(globalDecision), 100)
+    setTimeout(() => res(globalDecision), 200)
   })
   let response = await promise
   console.log("promise: ", promise)
@@ -51,19 +51,19 @@ const checkResponse = (training, data) => {
 
 const checkAnswer = (training, data) => {
   switch (training) {
-    case "joinTraining1":
+    case "Joins - Ninja Move 1":
       if (data.results.length === 1 && data.results[0].spirit_animal === "ferret") {
         return true
       } else {
         return false
       }
-    case "joinTraining2":
+    case "Joins - Ninja Move 2":
       if (data.results.length === 1 && data.results[0].friend_name === "Sandwich Waverly") {
         return true
       } else {
         return false
       }
-    case "joinTraining3":
+    case "Joins - Ninja Move 3":
       if (data.results.length === 3 && data.results[0].band_name) {
         const bands = []
         for (let i = 0; i < data.results.length; i++) {
@@ -77,7 +77,7 @@ const checkAnswer = (training, data) => {
       } else {
         return false
       }
-    case "joinTraining4":
+    case "Joins - Ninja Move 4":
       if (data.results.length === 14 && data.results[0].band_name) {
         console.log("TRUTH CONDITION")
         const bands = []
@@ -93,7 +93,7 @@ const checkAnswer = (training, data) => {
       } else {
         return false
       }
-    case "aggregateTraining1":
+    case "Aggregates - Ninja Move 1":
       if (data.results.length === 1) {
         const vals = Object.values(data.results[0])
         for (let i = 0; i < vals.length; i++) {
@@ -105,6 +105,42 @@ const checkAnswer = (training, data) => {
       } else {
         return false
       }
+      case "Aggregates - Ninja Move 2":
+        if (data.results.length === 1) {
+          const vals = Object.values(data.results[0])
+          for (let i = 0; i < vals.length; i++) {
+            if (vals[i] === "Cootie Williams") {
+              return true
+            }
+          }
+          return false
+        } else {
+          return false
+        }
+        case "Aggregates - Ninja Move 3":
+          if (data.results.length === 1) {
+            const vals = Object.values(data.results[0])
+            for (let i = 0; i < vals.length; i++) {
+              if (vals[i] === 5) {
+                return true
+              }
+            }
+            return false
+          } else {
+            return false
+          }
+        case "Aggregates - Ninja Move 4":
+          if (data.results.length === 1) {
+            const vals = Object.values(data.results[0])
+            for (let i = 0; i < vals.length; i++) {
+              if (vals[i] === 1854393) {
+                return true
+              }
+            }
+            return false
+          } else {
+            return false
+          }
     default:
       return false
   }

@@ -4,7 +4,7 @@ import Query from "./query.js"
 
 class AggregateFunctions extends Component {
   state = {
-    training: "aggregateTraining1"
+    training: "Aggregates - Ninja Move 1"
   }
   handleSelect = (event) => {
     this.setState({
@@ -18,17 +18,17 @@ class AggregateFunctions extends Component {
           <h4>Choose Your Ninja Move</h4>
           <select id="moves-select" onChange={this.handleSelect}>
             <option
-              value="aggregateTraining1"
+              value="Aggregates - Ninja Move 1"
               default
               >Ninja Move 1</option>
             <option
-              value="aggregateTraining2"
+              value="Aggregates - Ninja Move 2"
               >Ninja Move 2</option>
             <option
-              value="aggregateTraining3"
+              value="Aggregates - Ninja Move 3"
               >Ninja Move 3</option>
             <option
-              value="aggregateTraining4"
+              value="Aggregates - Ninja Move 4"
               >Ninja Move 4</option>
           </select>
         </div>
@@ -59,6 +59,7 @@ class AggregateFunctions extends Component {
           userId={this.props.userId}
           username={this.props.username}
           session={this.props.session}
+          logOut={this.props.logOut}
         />
       </div>
     )

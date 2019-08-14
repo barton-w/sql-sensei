@@ -38,6 +38,7 @@ class TrainingSelector extends Component {
             userId={this.props.userId}
             username={this.props.username}
             session={this.props.session}
+            logOut={this.props.logOut}
           />
           : null
         }
@@ -47,6 +48,7 @@ class TrainingSelector extends Component {
             userId={this.props.userId}
             username={this.props.username}
             session={this.props.session}
+            logOut={this.props.logOut}
           />
           : null
         }
