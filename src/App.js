@@ -53,13 +53,13 @@ class App extends Component {
           :
           <Router>
             <nav>
-              <Link id="link-cta1" to="/">Train with The Sensei!</Link>
+              <Link id="link-cta1" to="/sql-sensei">Train with The Sensei!</Link>
               <Link id="link-cta2" to="/ninjamoves">View Saved Ninja Moves</Link>
               <a id="link"
                 onClick={this.logOut}
-                href="/">{this.state.username} | Log Out</a>
+                href="/sql-sensei">{this.state.username} | Log Out</a>
             </nav>
-            <Route path="/" exact
+            <Route path="/sql-sensei"
               render={(props) => <TrainingSelector {...props} userId={this.state.userId} username={this.state.username} session={this.state.session}
               />}
             />
