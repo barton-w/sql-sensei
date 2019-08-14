@@ -144,7 +144,7 @@ body {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   top: 2%;
   left: 2%;
   text-align: left;
@@ -172,12 +172,25 @@ nav {
   color: var(--white);
   display: block;
   text-decoration: none;
-  margin-bottom: 2%;
+  font-size: 1.3rem;
 }
 
-#link-cta {
+#link-cta1 {
   color: var(--red);
   text-decoration: none;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2%;
+  font-size: 1.6rem;
+}
+
+#link-cta2 {
+  color: var(--red);
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2%;
+  font-size: 1.6rem;
 }
 
 .button-secondary {
@@ -215,4 +228,32 @@ nav {
 
 .correct {
   font-weight: 600;
+}
+
+.ninja-moves-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.single-ninja-move {
+  width: 375px;
+  height: 250px;
+  background-color: black;
+  color: var(--white);
+  font-family: monospace;
+  font-size: 2rem;
+  border-radius: 10px;
+  margin-top: 3%;
+  text-align: left;
+  padding: 0 2%;
+  position: relative;
+}
+
+#remove {
+  position: absolute;
+  bottom: 0;
+  color: var(--red);
+  cursor: pointer;
 }
