@@ -1,6 +1,6 @@
 export default function clientSideValidation(query) {
   //Lowercase
-  query = query.toLowerCase()
+  //query = query.toLowerCase()
   //remove line-breaks
   query = query.replace(/\n/g, " ")
   //remove escapes

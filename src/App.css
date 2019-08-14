@@ -80,7 +80,7 @@ body {
 }
 
 #student-image-main {
-  background-image: url("./css/images/student.png");
+  background-image: url("./css/images/student2.png");
   width: 100px;
   height: 100px;
   margin: 0 auto 0 auto;
@@ -89,6 +89,14 @@ body {
   position: fixed;
   top: 50%;
   left: 8%;
+}
+
+#student-image-nav {
+  background-image: url("./css/images/student.png");
+  width: 75px;
+  height: 75px;
+  background-position: center;
+  background-size: cover;
 }
 
 .training {
@@ -239,7 +247,7 @@ nav {
 
 .single-ninja-move {
   width: 375px;
-  height: 250px;
+  height: 310px;
   background-color: black;
   color: var(--white);
   font-family: monospace;
