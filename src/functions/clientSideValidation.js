@@ -13,7 +13,7 @@ export default function clientSideValidation(query) {
     return {syntax: false, error: "Make sure your query begins with SELECT"}
   }
   if (!/from/i.test(query)) {
-    return {syntax: false, error: "Make sure you're selecting FROM somthing"}
+    return {syntax: false, error: "Make sure you're selecting FROM something"}
   }
   if (!/friends/i.test(query) && !/spirit_animals/i.test(query) && !/friends_music/i.test(query) && !/bands/i.test(query)) {
     return {syntax: false, error: "Check your query. What table are you selecting from?"}
